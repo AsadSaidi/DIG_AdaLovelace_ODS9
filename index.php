@@ -7,7 +7,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 min-h-screen w-full">
-    <?php include '../includes/header.php' ?>
+    <?php include 'includes/header.php' ?>
 
   <main class="bg-white rounded-xl shadow-md mt-8 p-8 w-full max-w-full">
 
@@ -19,7 +19,7 @@
 
       <!-- Animación con ancho 100% del contenedor -->
       <div class="w-full">
-          <?php include 'animacion.html' ?>
+          <?php include 'includes/animacion.html' ?>
       </div>
 
       <!-- Texto con ancho 100% igual al contenedor, más grande -->
