@@ -96,10 +96,7 @@
         Línia de regressió: Mostra la tendència general.
       </p>
 
-      <!-- Contenedor específico para el gráfico de dispersión -->
-      <div class="w-full mx-auto p-4 bg-white rounded shadow mb-6 chart-wrapper">
-        <canvas id="scatterChart" class="w-full h-96 block"></canvas>
-      </div>
+      <?php include '../includes/charts/vab_dispersio.html' ?>
 
       <h4 class="text-xl font-semibold mb-2">Conclusió d’aquest gràfic:</h4>
       <p class="mb-6">
@@ -110,135 +107,7 @@
       <p class="mb-4">
         Aquest gràfic compara el VAB industrial i la taxa d'atur per a les 10 comarques amb major VAB industrial:
       </p>
-      <!-- Contenedor específico para el gráfico de barras -->
-      <div class="w-full mx-auto p-4 bg-white rounded shadow mb-6 chart-wrapper">
-        <canvas id="barChart" class="w-full h-96 block"></canvas>
-      </div>
-
-      <!-- Script para los gráficos -->
-      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-      <script>
-        // Gràfic de dispersió
-        const scatterChartCtx = document.getElementById('scatterChart').getContext('2d');
-        new Chart(scatterChartCtx, {
-          type: 'scatter',
-          data: {
-            datasets: [
-              {
-                label: 'Comarques',
-                data: [
-                  { x: 7.52, y: 4.57, r: 20, label: 'Vallès Occidental' },
-                  { x: 8.09, y: 3.91, r: 18, label: 'Baix Llobregat' },
-                  { x: 23.60, y: 2.78, r: 5, label: 'Segarra' },
-                  { x: 38.00, y: 4.23, r: 3, label: 'Ribera d’Ebre' },
-                  { x: 5.78, y: 6.88, r: 4, label: 'Garrigues' }
-                ],
-                backgroundColor: 'rgba(54, 162, 235, 0.6)',
-                borderColor: 'rgba(54, 162, 235, 1)',
-                borderWidth: 1
-              },
-              {
-                label: 'Línia de regressió',
-                data: [
-                  { x: 0, y: 5.5 },
-                  { x: 40, y: 4.0 }
-                ],
-                type: 'line',
-                borderColor: 'rgba(255, 99, 132, 1)',
-                borderWidth: 2,
-                fill: false,
-                pointRadius: 0
-              }
-            ]
-          },
-          options: {
-            scales: {
-              x: {
-                title: { display: true, text: "VAB industrial per càpita (milers d'euros)" },
-                min: 0,
-                max: 45
-              },
-              y: {
-                title: { display: true, text: "Taxa d'atur (%)" },
-                min: 0,
-                max: 8
-              }
-            },
-            plugins: {
-              legend: { display: true },
-              tooltip: {
-                callbacks: {
-                  label: function(context) {
-                    return context.raw.label + ': (' + context.raw.x + ', ' + context.raw.y + '%)';
-                  }
-                }
-              }
-            }
-          }
-        });
-
-        // Gràfic de barres
-        const barChartCtx = document.getElementById('barChart').getContext('2d');
-        new Chart(barChartCtx, {
-          type: 'bar',
-          data: {
-            labels: [
-              'Vallès Occidental',
-              'Baix Llobregat',
-              'Barcelonès',
-              'Bages',
-              'Vallès Oriental',
-              'Maresme',
-              'Tarragonès',
-              'Baix Camp',
-              'Anoia',
-              'Osona'
-            ],
-            datasets: [
-              {
-                label: 'VAB industrial (M€)',
-                data: [7218.0, 6867.1, 6500.0, 1800.0, 1700.0, 1600.0, 1500.0, 1400.0, 1300.0, 1200.0],
-                backgroundColor: 'rgba(54, 162, 235, 0.6)',
-                yAxisID: 'y'
-              },
-              {
-                label: 'Taxa d\'atur (%)',
-                data: [4.57, 3.91, 4.15, 4.30, 4.20, 4.50, 5.22, 5.10, 5.14, 4.13],
-                type: 'line',
-                borderColor: 'rgba(255, 99, 132, 1)',
-                backgroundColor: 'rgba(255, 99, 132, 1)',
-                yAxisID: 'y1',
-                fill: false,
-                pointRadius: 5
-              }
-            ]
-          },
-          options: {
-            scales: {
-              y: {
-                title: { display: true, text: 'VAB industrial (M€)' },
-                position: 'left',
-                min: 0,
-                max: 8000
-              },
-              y1: {
-                title: { display: true, text: 'Taxa d\'atur (%)' },
-                position: 'right',
-                min: 0,
-                max: 8,
-                grid: { display: false }
-              },
-              x: {
-                title: { display: true, text: 'Comarques' }
-              }
-            },
-            plugins: {
-              legend: { display: true }
-            }
-          }
-        });
-      </script>
-
+      <?php include '../includes/charts/vab_barres.html' ?>
       <h4 class="text-xl font-semibold mb-2">Conclusió d’aquest gràfic:</h4>
       <p>
         El gràfic mostra que les comarques amb més VAB industrial tendeixen a tenir taxes d'atur moderades o baixes, donant suport parcial a la hipòtesi. No obstant això, hi ha excepcions que indiquen que l'atur està influït per múltiples factors.
@@ -247,43 +116,77 @@
 
     <!-- Sección 2 -->
     <section>
-      <h2 class="text-3xl font-semibold mb-4 text-orange-600">2. Dependència del sector industrial</h2>
+  <h2 class="text-3xl font-semibold mb-4 text-orange-600">2. Dependència del sector industrial</h2>
 
-      <p class="mb-4"><strong>Hipòtesi:</strong> Si una comarca depèn molt de la indústria i aquesta cau, l’impacte social (atur) és alt.</p>
-      <p class="mb-4"><strong>Relació:</strong> Percentatge de població ocupada en la indústria respecte al total d'ocupats vs. taxa d'atur com a indicador de vulnerabilitat social.</p>
+  <p class="mb-4"><strong>Hipòtesi:</strong> Si una comarca depèn molt de la indústria i aquesta cau, l’impacte social (atur) és alt.</p>
+  <p class="mb-4"><strong>Relació:</strong> Percentatge de població ocupada en la indústria respecte al total d'ocupats vs. taxa d'atur com a indicador de vulnerabilitat social.</p>
 
-      <h3 class="text-2xl font-semibold mt-8 mb-2">DATASETS:</h3>
-      <ul class="list-disc list-inside space-y-1">
-        <li>Atur registrat. Per sexe. Comarques i Aran, àmbits i províncies</li>
-        <li>Població a 1 de gener. Comarques i Aran, àmbits i províncies</li>
-        <li>Població ocupada. Per branques d'activitat. Comarques i Aran</li>
-      </ul>
+  <h3 class="text-2xl font-semibold mt-8 mb-2">DATASETS:</h3>
+  <ul class="list-disc list-inside space-y-1">
+    <li>Atur registrat. Per sexe. Comarques i Aran, àmbits i províncies</li>
+    <li>Població a 1 de gener. Comarques i Aran, àmbits i províncies</li>
+    <li>Població ocupada. Per branques d'activitat. Comarques i Aran</li>
+  </ul>
 
-      <h3 class="text-2xl font-semibold mt-8 mb-2">ANÀLISIS:</h3>
-      <p class="mb-4">
-        Compararé el percentatge de població ocupada en la indústria amb la taxa d'atur per comarca, generaré gràfics i conclouré si la hipòtesi és certa o falsa.
-      </p>
-    </section>
+  <h3 class="text-2xl font-semibold mt-8 mb-2">ANÀLISIS:</h3>
+  <p class="mb-4">
+    Compararé el percentatge de població ocupada en la indústria amb la taxa d'atur per comarca, generaré gràfics i conclouré si la hipòtesi és certa o falsa.
+  </p>
+</section>
 
-    <!-- Resultats 2 -->
-    <section>
-      <h2 class="text-3xl font-semibold mb-4 text-orange-600">RESULTATS 2</h2>
+<!-- Resultats 2 -->
+<section>
+  <h2 class="text-3xl font-semibold mb-4 text-orange-600">RESULTATS 2</h2>
 
-      <h3 class="text-2xl font-semibold mb-2">1. Processament de dades</h3>
-      <p class="mb-4">
-        Vaig calcular el percentatge de població ocupada en la indústria respecte al total d’ocupats per comarca.<br />
-        Exemple per algunes comarques:
-      </p>
-      <ul class="list-disc list-inside space-y-1 mb-6">
-        <li><strong>Vallès Occidental:</strong> Ocupació indústria: 12.34%, Taxa d'atur: 4.57%</li>
-        <li><strong>Baix Llobregat:</strong> Ocupació indústria: 10.78%, Taxa d'atur: 3.91%</li>
-      </ul>
+  <h3 class="text-2xl font-semibold mb-2">1. Processament de dades</h3>
+  <p class="mb-4">
+    Vaig calcular el percentatge de població ocupada en la indústria respecte al total d’ocupats per comarca.<br />
+    Exemple per algunes comarques:
+  </p>
+  <ul class="list-disc list-inside space-y-1 mb-6">
+    <li><strong>Vallès Occidental:</strong> Ocupació indústria: 12.34%, Taxa d'atur: 4.57%</li>
+    <li><strong>Baix Llobregat:</strong> Ocupació indústria: 10.78%, Taxa d'atur: 3.91%</li>
+  </ul>
 
-      <h3 class="text-2xl font-semibold mb-2">2. Gràfics i conclusions</h3>
-      <p>
-        [Aquí es generaria un gràfic que mostri la relació entre dependència industrial i taxa d'atur, i les conclusions corresponents.]
-      </p>
-    </section>
+  <h3 class="text-2xl font-semibold mb-2">2. Gràfic de dependència industrial</h3>
+  <p class="mb-4">
+    El següent gràfic mostra la relació entre el percentatge de població ocupada en la indústria i la taxa d’atur. Pot ajudar a identificar com la dependència del sector industrial pot augmentar la vulnerabilitat a l'atur.
+  </p>
+  <?php include '../includes/charts/dependeciaIndustrial.html' ?>
+
+  <h4 class="text-xl font-semibold mb-2">Conclusió d’aquest gràfic:</h4>
+  <p>
+   El gràfic de dispersió mostra una relació positiva molt feble (correlació de Pearson ≈ 0.10, calculada aproximadament) entre el percentatge d'ocupació industrial i la taxa d'atur, contràriament a la hipòtesi. Comarques amb alta dependència industrial, com Segarra (37.72%, taxa d'atur = 2.78%) i Garrotxa (33.77%, taxa d'atur = 3.20%), tendeixen a tenir taxes d'atur baixes, suggerint que una forta dependència industrial no necessàriament implica major vulnerabilitat social (atur elevat). Tanmateix, excepcions com Anoia (25.45%, taxa d'atur = 5.14%) i Baix Penedès (14.76%, taxa d'atur = 5.72%) indiquen que l'atur pot ser alt en algunes comarques industrials, possiblement per factors com l'estacionalitat o la manca de diversificació econòmica. La gran dispersió suggereix que l'atur està influït per altres factors, com el turisme, els serveis o la demografia.
+</section>
+
+<section>
+  <h2 class="text-3xl font-semibold mb-4 text-orange-600">RESULTATS 2</h2>
+
+  <h3 class="text-2xl font-semibold mb-2">1. Processament de dades</h3>
+  <p class="mb-4">
+    Vaig calcular el percentatge de població ocupada en la indústria respecte al total d’ocupats per comarca.<br />
+    Exemple per algunes comarques:
+  </p>
+  <ul class="list-disc list-inside space-y-1 mb-6">
+    <li><strong>Vallès Occidental:</strong> Ocupació indústria: 12.34%, Taxa d'atur: 4.57%</li>
+    <li><strong>Baix Llobregat:</strong> Ocupació indústria: 10.78%, Taxa d'atur: 3.91%</li>
+  </ul>
+
+  <h3 class="text-2xl font-semibold mb-2">2. Gràfic de dependència industrial</h3>
+  <p class="mb-4">
+    Aquest gràfic compara el percentatge d'ocupació industrial i la taxa d'atur per a les 10 comarques amb major dependència industrial:<br />
+    <strong>Eix Y esquerre:</strong> Percentatge d'ocupació industrial (%, barres blaves).<br />
+    <strong>Eix Y dret:</strong> Taxa d'atur (%, línia vermella amb punts).
+  </p>
+  <?php include '../includes/charts/dependeciaIndustrial.html' ?>
+
+  <h4 class="text-xl font-semibold mb-2">Conclusió d’aquest gràfic:</h4>
+  <p>
+    El gràfic de barres mostra que les comarques amb major dependència industrial, com <strong>Segarra</strong>, <strong>Garrotxa</strong> i <strong>Conca de Barberà</strong>, generalment tenen taxes d'atur baixes o moderades (2.78%-4.79%), contràriament a la hipòtesi que una alta dependència industrial implica major vulnerabilitat social. No obstant això, <strong>Anoia</strong> (25.45%, taxa d'atur = 5.14%) i <strong>Alt Camp</strong> (27.73%, taxa d'atur = 4.79%) presenten taxes d'atur més altes, suggerint que algunes comarques industrials poden ser més vulnerables, possiblement per una menor diversificació econòmica o per crisis sectorials específiques. La variació en les taxes d'atur indica que factors com la diversitat econòmica i les dinàmiques laborals locals tenen un paper important.
+  </p>
+</section>
+
+
 
   </main>
 
