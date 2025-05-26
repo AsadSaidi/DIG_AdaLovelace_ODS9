@@ -1,1 +1,0 @@
-# Punt d’entrada de la API  
