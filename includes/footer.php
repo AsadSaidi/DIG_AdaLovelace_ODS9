@@ -4,11 +4,11 @@
     <!-- Navegación -->
     <nav>
       <ul class="flex flex-wrap justify-center space-x-6 text-sm font-semibold text-white">
-        <li><a href="index.php" class="hover:text-blue-300 transition-colors">Inicio</a></li>
-        <li><a href="impacteSocial.php" class="hover:text-blue-300 transition-colors">Impacte Social</a></li>
-        <li><a href="impacteAmbiental.php" class="hover:text-blue-300 transition-colors">Impacte Ambiental</a></li>
-        <li><a href="impacteTecnologic.php" class="hover:text-blue-300 transition-colors">Impacte Tecnologic</a></li>
-        <li><a href="quienes_somos.php" class="hover:text-blue-300 transition-colors">¿Quiénes Somos?</a></li>
+        <li><a href="../../index.php" class="hover:text-blue-300 transition-colors">Inicio</a></li>
+        <li><a href="../../views/impacteSocial.php" class="hover:text-blue-300 transition-colors">Impacte Social</a></li>
+        <li><a href="../../views/impacteAmbiental.php" class="hover:text-blue-300 transition-colors">Impacte Ambiental</a></li>
+        <li><a href="../../views/impacteTecnologic.php" class="hover:text-blue-300 transition-colors">Impacte Tecnologic</a></li>
+        <li><a href="../../views/qui_som.php" class="hover:text-blue-300 transition-colors">Qui som?</a></li>
       </ul>
     </nav>
 

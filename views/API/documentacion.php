@@ -24,13 +24,13 @@
         <option value="vab_comarques">vab_comarques</option>
         <option value="inversions_comarques">inversions_comarques</option>
       </select>
-      <input type="text" id="apiUrl" class="mt-4 w-full p-2 border rounded bg-gray-100" readonly value="https://scaling-rotary-phone-5gxrwwwr4gvrfwjw-3000.app.github.dev/api.php?table=poblacio_comarques" />
+      <input type="text" id="apiUrl" class="mt-4 w-full p-2 border rounded bg-gray-100" readonly value="https://scaling-rotary-phone-5gxrwwwr4gvrfwjw-3000.app.github.dev/api/api.php?table=poblacio_comarques" />
     </section>
 
     <!-- Descripció general -->
     <section>
       <h2 class="text-2xl font-bold text-orange-600">Base de dades: poblacio_comarques_limpio.db</h2>
-      <p><strong>URL base:</strong> https://scaling-rotary-phone-5gxrwwwr4gvrfwjw-3000.app.github.dev/api.php</p>
+      <p><strong>URL base:</strong> https://scaling-rotary-phone-5gxrwwwr4gvrfwjw-3000.app.github.dev/api/api.php</p>
     </section>
 
     <section>
@@ -88,7 +88,7 @@
     const select = document.getElementById('endpointSelect');
     const input = document.getElementById('apiUrl');
     select.addEventListener('change', () => {
-      input.value = `https://scaling-rotary-phone-5gxrwwwr4gvrfwjw-3000.app.github.dev/api.php?table=${select.value}`;
+      input.value = `https://scaling-rotary-phone-5gxrwwwr4gvrfwjw-3000.app.github.dev/api/api.php?table=${select.value}`;
     });
   </script>
 </body>
