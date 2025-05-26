@@ -4,18 +4,18 @@
 </head>
 <header class="flex items-center justify-between p-4 bg-white shadow-md">
     <div class="logo">
-        <a href="../index.php">
-            <img src="../data/logo.png" alt="Logo ODS 9" class="h-12">
+        <a href="../../index.php">
+            <img src="../../data/logo.png" alt="Logo ODS 9" class="h-12">
         </a>
     </div>
     <nav>
         <ul class="flex space-x-6 list-none">
-            <li><a href="../index.php" class="text-gray-800 hover:text-blue-600 font-semibold">Inici</a></li>
-            <li><a href="../views/impacteSocial.php" class="text-gray-800 hover:text-blue-600 font-semibold">Impacte Social</a></li>
-            <li><a href="../views/impacteAmbiental.php" class="text-gray-800 hover:text-blue-600 font-semibold">Impacte Ambiental</a></li>
-            <li><a href="../views/impacteTecnologic.php" class="text-gray-800 hover:text-blue-600 font-semibold">Impacte Tecnologic</a></li>
-            <li><a href="../views/API/" class="text-gray-800 hover:text-blue-600 font-semibold">API</a></li>
-            <li><a href="../views/qui_som.php" class="text-gray-800 hover:text-blue-600 font-semibold">¿Qui som?</a></li>
+            <li><a href="../../index.php" class="text-gray-800 hover:text-blue-600 font-semibold">Inici</a></li>
+            <li><a href="../../views/impacteSocial.php" class="text-gray-800 hover:text-blue-600 font-semibold">Impacte Social</a></li>
+            <li><a href="../../views/impacteAmbiental.php" class="text-gray-800 hover:text-blue-600 font-semibold">Impacte Ambiental</a></li>
+            <li><a href="../../views/impacteTecnologic.php" class="text-gray-800 hover:text-blue-600 font-semibold">Impacte Tecnologic</a></li>
+            <li><a href="../../views/API/documentacion.php" class="text-gray-800 hover:text-blue-600 font-semibold">API</a></li>
+            <li><a href="../../views/qui_som.php" class="text-gray-800 hover:text-blue-600 font-semibold">¿Qui som?</a></li>
         </ul>
     </nav>
 </header>
