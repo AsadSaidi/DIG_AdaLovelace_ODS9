@@ -29,7 +29,7 @@
   <main class="max-w-5xl mx-auto p-6 space-y-12">
     <!-- Secció 1 -->
     <section>
-      <h2 class="text-3xl font-semibold mb-4 text-orange-600">1. Emissions de Gasos d'Efecte Hivernacle (GEH) a Catalunya</h2>
+      <h2 class="text-5xl font-semibold mb-4 text-orange-600">1. Emissions de Gasos d'Efecte Hivernacle (GEH) a Catalunya</h2>
 
       <p class="mb-4"><strong>Hipòtesi:</strong> El consum d’energia no renovable domina, però les renovables creixen amb el temps i varien segons la província.</p>
       <p class="mb-4"><strong>Relació:</strong> Les comarques amb més activitat industrial tenen emissions de GEH més elevades, però l’ús creixent de renovables pot mitigar aquest impacte.</p>
@@ -71,7 +71,7 @@
 
     <!-- Resultats i conclusions de la primera part -->
     <section>
-      <h2 class="text-3xl font-semibold mb-4 text-orange-600">RESULTATS</h2>
+      <h2 class="text-5xl font-semibold mb-4 text-orange-600">RESULTATS</h2>
 
       <h3 class="text-2xl font-semibold mb-2">1. Processament de dades</h3>
       <p class="mb-4">
@@ -91,9 +91,7 @@
         Línia de referència: Tendència general.
       </p>
 
-      <div class="w-full mx-auto p-4 bg-white rounded shadow mb-6 chart-wrapper">
-        <canvas id="scatterChart" class="w-full h-96 block"></canvas>
-      </div>
+      <?php include '../includes/charts/emissions_scatter.html' ?>
 
       <h4 class="text-xl font-semibold mb-2">Conclusió d’aquest gràfic:</h4>
       <p class="mb-6">
@@ -104,130 +102,19 @@
       <p class="mb-4">
         Aquest gràfic mostra l’evolució del consum energètic (ktep) per província entre 2002 i 2020.
       </p>
-      <div class="w-full mx-auto p-4 bg-white rounded shadow mb-6 chart-wrapper">
-        <canvas id="lineChart" class="w-full h-96 block"></canvas>
-      </div>
 
-      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-      <script>
-        // Gràfic de dispersió
-        const scatterChartCtx = document.getElementById('scatterChart').getContext('2d');
-        new Chart(scatterChartCtx, {
-          type: 'scatter',
-          data: {
-            datasets: [
-              {
-                label: 'Províncies',
-                data: [
-                  { x: 4500, y: 450, r: 20, label: 'Barcelona' },
-                  { x: 2800, y: 400, r: 15, label: 'Tarragona' },
-                  { x: 1200, y: 150, r: 10, label: 'Girona' },
-                  { x: 800, y: 100, r: 8, label: 'Lleida' }
-                ],
-                backgroundColor: 'rgba(34, 197, 94, 0.6)',
-                borderColor: 'rgba(34, 197, 94, 1)',
-                borderWidth: 1
-              },
-              {
-                label: 'Línia de referència',
-                data: [
-                  { x: 0, y: 0 },
-                  { x: 5000, y: 500 }
-                ],
-                type: 'line',
-                borderColor: 'rgba(255, 99, 132, 1)',
-                borderWidth: 2,
-                fill: false,
-                pointRadius: 0
-              }
-            ]
-          },
-          options: {
-            scales: {
-              x: {
-                title: { display: true, text: 'Consum no renovable (ktep)' },
-                min: 0,
-                max: 6000
-              },
-              y: {
-                title: { display: true, text: 'Consum renovable (ktep)' },
-                min: 0,
-                max: 600
-              }
-            },
-            plugins: {
-              legend: { display: true },
-              tooltip: {
-                callbacks: {
-                  label: function(context) {
-                    return context.raw.label + ': (' + context.raw.x + ' ktep, ' + context.raw.y + ' ktep)';
-                  }
-                }
-              }
-            }
-          }
-        });
-
-        // Gràfic de línia
-        const lineChartCtx = document.getElementById('lineChart').getContext('2d');
-        new Chart(lineChartCtx, {
-          type: 'line',
-          data: {
-            labels: ['2002', '2004', '2006', '2008', '2010', '2012', '2014', '2016', '2018', '2020'],
-            datasets: [
-              {
-                label: 'Barcelona',
-                data: [5000, 4900, 4800, 4700, 4600, 4500, 4400, 4350, 4300, 4200],
-                borderColor: 'rgba(34, 197, 94, 1)',
-                fill: false
-              },
-              {
-                label: 'Tarragona',
-                data: [3000, 2950, 2900, 2850, 2800, 2750, 2700, 2650, 2600, 2550],
-                borderColor: 'rgba(255, 99, 132, 1)',
-                fill: false
-              },
-              {
-                label: 'Girona',
-                data: [1500, 1450, 1400, 1350, 1300, 1250, 1200, 1150, 1100, 1050],
-                borderColor: 'rgba(255, 159, 64, 1)',
-                fill: false
-              },
-              {
-                label: 'Lleida',
-                data: [1000, 950, 900, 850, 800, 750, 700, 650, 600, 550],
-                borderColor: 'rgba(59, 130, 246, 1)',
-                fill: false
-              }
-            ]
-          },
-          options: {
-            scales: {
-              y: {
-                title: { display: true, text: 'Consum energètic (ktep)' },
-                min: 0,
-                max: 6000
-              },
-              x: {
-                title: { display: true, text: 'Any' }
-              }
-            },
-            plugins: {
-              legend: { display: true }
-            }
-          }
-        });
-      </script>
+      <?php include '../includes/charts/emissions_line.html' ?>
 
       <h4 class="text-xl font-semibold mb-2">Conclusió d’aquest gràfic:</h4>
-      <p>
+      <p class="mb-6">
         El gràfic de línia mostra una reducció progressiva del consum energètic a les quatre províncies entre 2002 i 2020, amb Barcelona mantenint el consum més elevat. Això suggereix millores en l’eficiència energètica i una possible transició cap a fonts renovables, recolzant parcialment la hipòtesi.
       </p>
     </section>
 
     <!-- Secció 2 -->
+    <hr class="border-t border-gray-300 my-6">
     <section>
-      <h2 class="text-3xl font-semibold mb-4 text-orange-600">2. Consum Energètic Industrial i PIB Industrial</h2>
+      <h2 class="text-5xl font-semibold mb-4 text-orange-600">2. Consum Energètic Industrial i PIB Industrial</h2>
 
       <p class="mb-4"><strong>Hipòtesi:</strong> Les emissions estan correlacionades amb l’activitat industrial i el consum energètic, amb Barcelona com a província més emissora.</p>
       <p class="mb-4"><strong>Relació:</strong> El consum energètic industrial està estretament vinculat al PIB industrial, amb impactes visibles durant les crisis econòmiques (2008, 2020).</p>
@@ -254,7 +141,7 @@
 
     <!-- Resultats 2 -->
     <section>
-      <h2 class="text-3xl font-semibold mb-4 text-orange-600">RESULTATS 2</h2>
+      <h2 class="text-5xl font-semibold mb-4 text-orange-600">RESULTATS</h2>
 
       <h3 class="text-2xl font-semibold mb-2">1. Processament de dades</h3>
       <p class="mb-4">
@@ -270,61 +157,11 @@
       <p class="mb-4">
         Aquest gràfic correlaciona el consum energètic industrial (ktep) i la variació del PIB industrial (%) a Catalunya del 2004 al 2020.
       </p>
-      <div class="w-full mx-auto p-4 bg-white rounded shadow mb-6 chart-wrapper">
-        <canvas id="consumPibChart" class="w-full h-96 block"></canvas>
-      </div>
 
-      <script>
-        // Gràfic Consum Energètic vs. Variació PIB Industrial
-        const consumPibChartCtx = document.getElementById('consumPibChart').getContext('2d');
-        new Chart(consumPibChartCtx, {
-          type: 'scatter',
-          data: {
-            datasets: [
-              {
-                label: 'Consum vs. PIB Industrial',
-                data: [
-                  { x: 5000, y: 2, label: '2004' },
-                  { x: 4900, y: -5, label: '2008' },
-                  { x: 4700, y: 3, label: '2012' },
-                  { x: 4500, y: 4, label: '2016' },
-                  { x: 4200, y: -8, label: '2020' }
-                ],
-                backgroundColor: 'rgba(34, 197, 94, 0.6)',
-                borderColor: 'rgba(34, 197, 94, 1)',
-                borderWidth: 1
-              }
-            ]
-          },
-          options: {
-            scales: {
-              x: {
-                title: { display: true, text: 'Consum energètic (ktep)' },
-                min: 4000,
-                max: 5500
-              },
-              y: {
-                title: { display: true, text: 'Variació PIB industrial (%)' },
-                min: -10,
-                max: 10
-              }
-            },
-            plugins: {
-              legend: { display: true },
-              tooltip: {
-                callbacks: {
-                  label: function(context) {
-                    return context.raw.label + ': (' + context.raw.x + ' ktep, ' + context.raw.y + '%)';
-                  }
-                }
-              }
-            }
-          }
-        });
-      </script>
+      <?php include '../includes/charts/consum_pib.html' ?>
 
       <h4 class="text-xl font-semibold mb-2">Conclusió d’aquest gràfic:</h4>
-      <p>
+      <p class="mb-6">
         El gràfic mostra una correlació entre el consum energètic i la variació del PIB industrial, amb caigudes pronunciades el 2008 i el 2020, reflectint l’impacte de les crisis econòmiques. Tot i això, l’augment de renovables durant aquests períodes suggereix una transició cap a un model més sostenible.
       </p>
     </section>
@@ -332,9 +169,16 @@
     <!-- Conclusió general -->
     <section>
       <h2 class="text-3xl font-semibold mb-4 text-orange-600">Conclusió General</h2>
-      <p>
+      <p class="mb-4">
         L’anàlisi recolza parcialment les hipòtesis. El consum d’energia no renovable domina, però les renovables creixen lentament, especialment a Tarragona i Barcelona. Les emissions de GEH estan correlacionades amb l’activitat industrial, amb Barcelona com a màxim emissor. Les crisis econòmiques redueixen el consum energètic i el PIB industrial, però l’augment de renovables indica una transició cap a una indústria més sostenible. Les polítiques de compensació de carboni (LULUCF) i l’eficiència energètica són claus per mitigar l’impacte ambiental.
       </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-2">Limitacions</h3>
+      <ul class="list-disc list-inside space-y-1 mb-4">
+        <li>Les dades de consum energètic i emissions poden no reflectir variacions a nivell de comarca.</li>
+        <li>La manca de dades detallades sobre l’ús de renovables per sector limita l’anàlisi.</li>
+        <li>L’efecte compensatori del sector LULUCF pot estar subestimat.</li>
+      </ul>
     </section>
 
   </main>
