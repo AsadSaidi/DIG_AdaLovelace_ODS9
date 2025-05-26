@@ -19,6 +19,7 @@
     }
   </style>
 </head>
+<?php include '../includes/header.php' ?>
 <body class="bg-gray-50 min-h-screen text-gray-900">
 
   <header class="bg-orange-600 text-white p-6">
@@ -323,6 +324,6 @@
     </section>
 
   </main>
-
+  <?php include '../includes/footer.php' ?>
 </body>
 </html>
