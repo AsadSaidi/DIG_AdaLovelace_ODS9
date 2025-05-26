@@ -15,7 +15,7 @@
             <li><a href="../views/impacteAmbiental.php" class="text-gray-800 hover:text-blue-600 font-semibold">Impacte Ambiental</a></li>
             <li><a href="../views/impacteTecnologic.php" class="text-gray-800 hover:text-blue-600 font-semibold">Impacte Tecnologic</a></li>
             <li><a href="../views/API/" class="text-gray-800 hover:text-blue-600 font-semibold">API</a></li>
-            <li><a href="quienes_somos.php" class="text-gray-800 hover:text-blue-600 font-semibold">¿Quiénes Somos?</a></li>
+            <li><a href="../views/qui_som.php" class="text-gray-800 hover:text-blue-600 font-semibold">¿Qui som?</a></li>
         </ul>
     </nav>
 </header>
