@@ -1,66 +1,65 @@
-<!-- Contenedor específico para el gráfico de dispersión -->
-<div class="w-full mx-auto p-4 bg-white rounded shadow mb-6 chart-wrapper">
-    <canvas id="scatterChart" class="w-full h-96 block"></canvas>
-</div>
-<!-- Script para los gráficos -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-    // Gràfic de dispersió
+<h3 class="text-3xl font-semibold mt-8 mb-2 text-orange-600">Gràfic de dispersió: VAB Industrial vs. Taxa d'Atur</h3>
+<div class="chart-wrapper">
+  <canvas id="scatterChart" class="w-full h-96 block"></canvas>
+  <script>
     const scatterChartCtx = document.getElementById('scatterChart').getContext('2d');
     new Chart(scatterChartCtx, {
-        type: 'scatter',
-        data: {
+      type: 'scatter',
+      data: {
         datasets: [
-            {
+          {
             label: 'Comarques',
             data: [
-                { x: 7.52, y: 4.57, r: 20, label: 'Vallès Occidental' },
-                { x: 8.09, y: 3.91, r: 18, label: 'Baix Llobregat' },
-                { x: 23.60, y: 2.78, r: 5, label: 'Segarra' },
-                { x: 38.00, y: 4.23, r: 3, label: 'Ribera d’Ebre' },
-                { x: 5.78, y: 6.88, r: 4, label: 'Garrigues' }
+              { x: 7.52, y: 4.57, r: 20, label: 'Vallès Occidental' },
+              { x: 8.09, y: 3.91, r: 18, label: 'Baix Llobregat' },
+              { x: 23.60, y: 2.78, r: 5, label: 'Segarra' },
+              { x: 38.00, y: 4.23, r: 3, label: 'Ribera d’Ebre' },
+              { x: 5.78, y: 6.88, r: 4, label: 'Garrigues' }
             ],
-            backgroundColor: 'rgba(54, 162, 235, 0.6)',
-            borderColor: 'rgba(54, 162, 235, 1)',
-            borderWidth: 1
-            },
-            {
+            backgroundColor: 'rgba(249, 115, 22, 0.6)', // #F97316
+            borderColor: 'rgba(249, 115, 22, 1)',
+            borderWidth: 1,
+            pointHoverRadius: 12
+          },
+          {
             label: 'Línia de regressió',
             data: [
-                { x: 0, y: 5.5 },
-                { x: 40, y: 4.0 }
+              { x: 0, y: 5.5 },
+              { x: 40, y: 4.0 }
             ],
             type: 'line',
-            borderColor: 'rgba(255, 99, 132, 1)',
+            borderColor: 'rgba(30, 64, 175, 1)', // #1E40AF
             borderWidth: 2,
             fill: false,
             pointRadius: 0
-            }
+          }
         ]
-        },
-        options: {
+      },
+      options: {
         scales: {
-            x: {
+          x: {
             title: { display: true, text: "VAB industrial per càpita (milers d'euros)" },
             min: 0,
             max: 45
-            },
-            y: {
+          },
+          y: {
             title: { display: true, text: "Taxa d'atur (%)" },
             min: 0,
             max: 8
-            }
+          }
         },
         plugins: {
-            legend: { display: true },
-            tooltip: {
+          legend: { display: true },
+          tooltip: {
             callbacks: {
-                label: function(context) {
-                return context.raw.label + ': (' + context.raw.x + ', ' + context.raw.y + '%)';
-                }
+              label: function(context) {
+                return `${context.raw.label}: VAB ${context.raw.x} milers €, Atur ${context.raw.y}%`;
+              }
             }
-            }
-        }
-        }
+          }
+        },
+        animation: { duration: 1000, easing: 'easeOutQuart' }
+      }
     });
-</script>
+  </script>
+</div>
