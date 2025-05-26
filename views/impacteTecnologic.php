@@ -29,7 +29,7 @@
   <main class="max-w-5xl mx-auto p-6 space-y-12">
     <!-- Secció 1: Inversions vs. Desenvolupament Econòmic -->
     <section>
-      <h2 class="text-3xl font-semibold mb-4 text-orange-600">1. Inversions vs. Desenvolupament Econòmic</h2>
+      <h2 class="text-5xl font-semibold mb-4 text-orange-600">1. Inversions vs. Desenvolupament Econòmic</h2>
 
       <p class="mb-4"><strong>Hipòtesi:</strong> Com més s’inverteix en recerca i desenvolupament, més capacitat d’innovació i creixement tenen les comarques.</p>
       <p class="mb-4"><strong>Relació:</strong> Compararem la despesa en inversions amb el Valor Afegit Brut (VAB) total i el VAB dels sectors més innovadors, així com la seva relació amb la taxa d’atur.</p>
@@ -73,7 +73,7 @@
 
     <!-- Resultats i conclusions de la primera part -->
     <section>
-      <h2 class="text-3xl font-semibold mb-4 text-orange-600">RESULTATS</h2>
+      <h2 class="text-5xl font-semibold mb-4 text-orange-600">RESULTATS</h2>
 
       <h3 class="text-2xl font-semibold mb-2">1. Processament de dades</h3>
       <p class="mb-4">
@@ -93,9 +93,7 @@
         Punts: Cada comarca, amb colors segons la taxa d’atur.
       </p>
 
-      <div class="w-full mx-auto p-4 bg-white rounded shadow mb-6 chart-wrapper">
-        <canvas id="inversioVabChart" class="w-full h-96 block"></canvas>
-      </div>
+      <?php include '../includes/charts/inversio_vab.html' ?>
 
       <h4 class="text-xl font-semibold mb-2">Conclusió d’aquest gràfic:</h4>
       <p class="mb-6">
@@ -112,56 +110,6 @@
 
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
       <script>
-        // Gràfic de dispersió: Inversió per càpita vs. VAB per càpita
-        const inversioVabChartCtx = document.getElementById('inversioVabChart').getContext('2d');
-        new Chart(inversioVabChartCtx, {
-          type: 'scatter',
-          data: {
-            datasets: [
-              {
-                label: 'Comarques',
-                data: [
-                  { x: 30000, y: 250, label: 'Vallès Occidental', color: 'rgba(34, 197, 94, 0.6)' },
-                  { x: 40000, y: 400, label: 'Barcelonès', color: 'rgba(59, 130, 246, 0.6)' },
-                  { x: 20000, y: 150, label: 'Alt Camp', color: 'rgba(255, 99, 132, 0.6)' },
-                  { x: 25000, y: 200, label: 'Baix Llobregat', color: 'rgba(255, 159, 64, 0.6)' }
-                ],
-                backgroundColor: function(context) {
-                  return context.raw.color;
-                },
-                borderColor: function(context) {
-                  return context.raw.color.replace('0.6', '1');
-                },
-                borderWidth: 1
-              }
-            ]
-          },
-          options: {
-            scales: {
-              x: {
-                title: { display: true, text: 'VAB per càpita (euros)' },
-                min: 0,
-                max: 50000
-              },
-              y: {
-                title: { display: true, text: 'Inversió per càpita (euros)' },
-                min: 0,
-                max: 500
-              }
-            },
-            plugins: {
-              legend: { display: true },
-              tooltip: {
-                callbacks: {
-                  label: function(context) {
-                    return context.raw.label + ': VAB=' + context.raw.x + '€, Inversió=' + context.raw.y + '€';
-                  }
-                }
-              }
-            }
-          }
-        });
-
         // Gràfic de caixa: Taxa d’atur per nivell d’inversió
         const boxPlotChartCtx = document.getElementById('boxPlotChart').getContext('2d');
         new Chart(boxPlotChartCtx, {
@@ -197,14 +145,15 @@
       </script>
 
       <h4 class="text-xl font-semibold mb-2">Conclusió d’aquest gràfic:</h4>
-      <p>
+      <p class="mb-6">
         La mediana de la taxa d’atur disminueix de les comarques amb inversió baixa (~7-8%) a les d’inversió alta (~4-5%), amb menys variabilitat en el grup d’inversió alta. Això recolza parcialment la hipòtesi, suggerint que més inversió pot estar associada a millors resultats econòmics i ocupació més estable.
       </p>
     </section>
 
-    <!-- Secció 2: Empreses TIC vs. Ocupació i Dinamisme Econòmic -->
+    <!-- Secció 2 -->
+    <hr class="border-t border-gray-300 my-6">
     <section>
-      <h2 class="text-3xl font-semibold mb-4 text-orange-600">2. Empreses TIC vs. Ocupació i Dinamisme Econòmic</h2>
+      <h2 class="text-5xl font-semibold mb-4 text-orange-600">2. Empreses TIC vs. Ocupació i Dinamisme Econòmic</h2>
 
       <p class="mb-4"><strong>Hipòtesi:</strong> Les comarques amb més empreses TIC tenen economies més actives i ocupació més qualificada.</p>
       <p class="mb-4"><strong>Relació:</strong> Analitzarem la correlació entre el nombre estimat d’empreses TIC i el VAB dels serveis, la taxa d’atur, la proporció de població jove i l’ocupació en el sector TIC.</p>
@@ -238,7 +187,7 @@
 
     <!-- Resultats 2 -->
     <section>
-      <h2 class="text-3xl font-semibold mb-4 text-orange-600">RESULTATS 2</h2>
+      <h2 class="text-5xl font-semibold mb-4 text-orange-600">RESULTATS</h2>
 
       <h3 class="text-2xl font-semibold mb-2">1. Processament de dades</h3>
       <p class="mb-4">
@@ -257,60 +206,10 @@
         Punts: Cada comarca.
       </p>
 
-      <div class="w-full mx-auto p-4 bg-white rounded shadow mb-6 chart-wrapper">
-        <canvas id="ticIndicatorsChart" class="w-full h-96 block"></canvas>
-      </div>
-
-      <script>
-        // Gràfic de dispersió: Empreses TIC vs. Indicadors
-        const ticIndicatorsChartCtx = document.getElementById('ticIndicatorsChart').getContext('2d');
-        new Chart(ticIndicatorsChartCtx, {
-          type: 'scatter',
-          data: {
-            datasets: [
-              {
-                label: 'VAB Serveis',
-                data: [
-                  { x: 8218, y: 78707, label: 'Barcelonès' },
-                  { x: 4274, y: 40000, label: 'Vallès Occidental' },
-                  { x: 4094, y: 38000, label: 'Baix Llobregat' },
-                  { x: 686, y: 5000, label: 'Baix Camp' }
-                ],
-                backgroundColor: 'rgba(34, 197, 94, 0.6)',
-                borderColor: 'rgba(34, 197, 94, 1)',
-                borderWidth: 1
-              }
-            ]
-          },
-          options: {
-            scales: {
-              x: {
-                title: { display: true, text: 'Empreses TIC estimades' },
-                min: 0,
-                max: 10000
-              },
-              y: {
-                title: { display: true, text: 'VAB Serveis (M€)' },
-                min: 0,
-                max: 100000
-              }
-            },
-            plugins: {
-              legend: { display: true },
-              tooltip: {
-                callbacks: {
-                  label: function(context) {
-                    return context.raw.label + ': (' + context.raw.x + ' empreses, ' + context.raw.y + ' M€)';
-                  }
-                }
-              }
-            }
-          }
-        });
-      </script>
+      <?php include '../includes/charts/tic_indicators.html' ?>
 
       <h4 class="text-xl font-semibold mb-2">Conclusió d’aquest gràfic:</h4>
-      <p>
+      <p class="mb-6">
         El gràfic mostra una correlació positiva forta (r ≈ 0.90) entre empreses TIC i VAB dels serveis, però una correlació feble amb la taxa d’atur (r ≈ -0.20) i moderada amb la població jove (r ≈ 0.40). Això indica que les empreses TIC impulsen el dinamisme econòmic, però no redueixen significativament l’atur.
       </p>
     </section>
@@ -318,9 +217,16 @@
     <!-- Conclusió general -->
     <section>
       <h2 class="text-3xl font-semibold mb-4 text-orange-600">Conclusió General</h2>
-      <p>
-        L’anàlisi recolza parcialment les hipòtesis. Les inversions per càpita tenen una correlació positiva feble amb el VAB per càpita, però les inversions acumulades mostren un impacte més clar a llarg termini. Les comarques amb més empreses TIC, com Barcelonès, tenen economies més actives i ocupació més qualificada, però l’impacte en la reducció de l’atur és limitat. Factors com la diversitat econòmica i la urbanització influeixen significativament. Calen dades més específiques sobre inversions en I+D i empreses TIC per comarca per validar les hipòtesis amb més precisió.
+      <p class="mb-4">
+        L’anàlisi recolza parcialment les hipòtesis. Les inversions per càpita tenen una correlació positiva feble amb el VAB per càpita, però les inversions acumulades mostren un impacte més clar a llarg termini. Les comarques amb més empreses TIC, com Barcelonès, tenen economies més actives i ocupació més qualificada, però l’impacte en la reducció de l’atur és limitat. Factors com la diversitat econòmica i la urbanització influeixen significativament.
       </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-2">Limitacions</h3>
+      <ul class="list-disc list-inside space-y-1 mb-4">
+        <li>Les estimacions d’empreses TIC es basen en el VAB dels serveis, cosa que pot no reflectir la distribució real.</li>
+        <li>La taxa d’atur es va calcular amb la població total, no la població activa, cosa que pot subestimar les taxes reals.</li>
+        <li>Les dades d’inversió en I+D no estan desglossades per comarca, limitant l’anàlisi.</li>
+      </ul>
     </section>
 
   </main>

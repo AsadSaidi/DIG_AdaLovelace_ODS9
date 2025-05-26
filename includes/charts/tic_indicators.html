@@ -1,0 +1,51 @@
+<div class="w-full mx-auto p-4 bg-white rounded shadow mb-6 chart-wrapper">
+  <canvas id="ticIndicatorsChart" class="w-full h-96 block"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const ticIndicatorsChartCtx = document.getElementById('ticIndicatorsChart').getContext('2d');
+  new Chart(ticIndicatorsChartCtx, {
+    type: 'scatter',
+    data: {
+      datasets: [
+        {
+          label: 'VAB Serveis',
+          data: [
+            { x: 8218, y: 78707, label: 'Barcelonès' },
+            { x: 4274, y: 40000, label: 'Vallès Occidental' },
+            { x: 4094, y: 38000, label: 'Baix Llobregat' },
+            { x: 686, y: 5000, label: 'Baix Camp' }
+          ],
+          backgroundColor: 'rgba(34, 197, 94, 0.6)',
+          borderColor: 'rgba(34, 197, 94, 1)',
+          borderWidth: 1
+        }
+      ]
+    },
+    options: {
+      scales: {
+        x: {
+          title: { display: true, text: 'Empreses TIC estimades' },
+          min: 0,
+          max: 10000
+        },
+        y: {
+          title: { display: true, text: 'VAB Serveis (M€)' },
+          min: 0,
+          max: 100000
+        }
+      },
+      plugins: {
+        legend: { display: true },
+        tooltip: {
+          callbacks: {
+            label: function(context) {
+              return context.raw.label + ': (' + context.raw.x + ' empreses, ' + context.raw.y + ' M€)';
+            }
+          }
+        }
+      }
+    }
+  });
+</script>
