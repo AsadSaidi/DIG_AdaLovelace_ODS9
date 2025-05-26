@@ -97,13 +97,11 @@
           Valor afegit brut de la indústria
         </li>
       </ul>
-      <h3 class="text-3xl font-semibold mt-8 mb-2 text-orange-600">Gràfic de dispersió: VAB Industrial vs. Taxa d'Atur</h3>
       <?php include '../includes/charts/vab_dispersio.html' ?>
       <h4 class="text-xl font-semibold mb-2 text-orange-600">Conclusió d’aquest gràfic:</h4>
       <p class="mb-6 text-lg">
         El gràfic mostra una relació negativa feble entre el VAB industrial per càpita i la taxa d’atur, donant suport parcial a la hipòtesi. Excepcions com Garrigues suggereixen que altres factors (p. ex., ruralitat) influeixen.
       </p>
-      <h3 class="text-3xl font-semibold mt-8 mb-2 text-orange-600">Gràfic de barres: VAB Industrial i Taxa d'Atur</h3>
       <?php include '../includes/charts/vab_barres.html' ?>
       <h4 class="text-xl font-semibold mb-2 text-orange-600">Conclusió d’aquest gràfic:</h4>
       <p class="mb-6 text-lg">
@@ -166,7 +164,6 @@
       <p class="mb-6 text-lg">
         La relació positiva feble (correlació ≈ 0.10) contradiu la hipòtesi. Comarques com Segarra (37.72% ocupació, 2.78% atur) tenen taxes d’atur baixes, però excepcions com Alt Camp (25%, 5.90%) suggereixen vulnerabilitat en algunes comarques.
       </p>
-      <h3 class="text-3xl font-semibold mt-8 mb-2 text-orange-600">Gràfic de barres: Ocupació Industrial i Taxa d'Atur</h3>
       <?php include '../includes/charts/ocupacioIndustrial.html' ?>
       <h4 class="text-xl font-semibold mb-2 text-orange-600">Conclusió d’aquest gràfic:</h4>
       <p class="mb-6 text-lg">
