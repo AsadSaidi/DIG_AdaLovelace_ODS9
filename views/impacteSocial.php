@@ -97,6 +97,7 @@
           Valor afegit brut de la indústria
         </li>
       </ul>
+      Gràfic de dispersió:
       <?php include '../includes/charts/vab_dispersio.html' ?>
       <h4 class="text-xl font-semibold mb-2 text-orange-600">Conclusió d’aquest gràfic:</h4>
       <p class="mb-6 text-lg">

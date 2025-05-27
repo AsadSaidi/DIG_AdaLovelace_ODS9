@@ -29,7 +29,7 @@
 
     <!-- Descripció general -->
     <section>
-      <h2 class="text-2xl font-bold text-orange-600">Base de dades: poblacio_comarques_limpio.db</h2>
+      <h2 class="text-2xl font-bold text-orange-600">Base de dades: database.db</h2>
       <p><strong>URL base:</strong> [domini actual]/api/api.php</p>
     </section>
 
@@ -48,27 +48,18 @@
     <section>
       <h3 class="text-xl font-semibold">Endpoints de l'API</h3>
       <ul class="list-disc list-inside mt-2">
-        <li><code>GET /api.php?table={taula}</code> - Tots els registres</li>
-        <li><code>GET /api.php?table={taula}&comarca=Nom</code> - Filtra per comarca</li>
-        <li><code>GET /api.php?table={taula}&year=2022</code> - Per any (només inversions)</li>
-        <li><code>GET /api.php?table={taula}/columns</code> - Columnes disponibles</li>
+        <li><code>GET /api/api.php?table={taula}</code> - Tots els registres</li>
+        <li><code>GET /api/api.php?table={taula}&comarca=Nom</code> - Filtra per comarca</li>
+        <li><code>GET /api/api.php?table=inversions_comarques&year={any}</code> - Per any</li>
+        <li><code>GET /api/api.php?table={taula}/columns</code> - Per veure les columnes disponibles de cada taula</li>
       </ul>
     </section>
 
     <!-- Format resposta -->
     <section>
-      <h3 class="text-xl font-semibold">Format de la resposta</h3>
-      <pre class="bg-gray-100 p-4 rounded overflow-x-auto">
-[
-  {
-    "comarca": "Alt Camp",
-    "valor": 44455
-  },
-  {
-    "comarca": "Alt Empordà",
-    "valor": 138221
-  }
-]</pre>
+      <h3 class="text-xl font-semibold">Format de la resposta:</h3><br>
+      <h4 id= "urlEjemplo" class="text-l font-semibold"> URL utilitzada: </h4>
+      <pre id="apiEjemplo" class="bg-gray-200 text-black p-4 rounded overflow-x-auto overflow-y-auto" style="max-height: 400px;"></pre>    
     </section>
 
     <!-- Notes -->
@@ -88,12 +79,28 @@
     const select = document.getElementById('endpointSelect');
     const input = document.getElementById('apiUrl');
     const baseUrl = `${window.location.origin}/api/api.php`;
-
+    const urlEjemploUtilizada = document.getElementById('urlEjemplo');
     input.value = `${baseUrl}?table=${select.value}`;
 
     select.addEventListener('change', () => {
       input.value = `${baseUrl}?table=${select.value}`;
     });
+
+    //Ús d'api d'exemple
+    let url = `${baseUrl}?table=poblacio_comarques`;
+    urlEjemploUtilizada.textContent += url;
+
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        //Per mostrar el JSON en formato "pretty"
+        const prettyJson = JSON.stringify(data, null, 2);
+        document.getElementById('apiEjemplo').textContent = prettyJson;
+      })
+      .catch(error => {
+        document.getElementById("salida").textContent = "Error al carregar les dades: " + error;
+      }
+    );
   </script>
 </body>
 </html>
