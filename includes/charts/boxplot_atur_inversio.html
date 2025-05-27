@@ -1,0 +1,47 @@
+<!-- includes/charts/atur_box.html -->
+<div class="chart-wrapper">
+  <canvas id="boxPlotChart" class="w-full h-96 block"></canvas>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const boxPlotChartCtx = document.getElementById('boxPlotChart').getContext('2d');
+      new Chart(boxPlotChartCtx, {
+        type: 'bar',
+        data: {
+          labels: ['Inversió Baixa', 'Inversió Mitjana', 'Inversió Alta'],
+          datasets: [
+            {
+              label: 'Taxa d’atur (%)',
+              data: [8, 6, 4],
+              backgroundColor: 'rgba(34, 197, 94, 0.6)', // Verd (aproximadament #22C55E)
+              borderColor: 'rgba(34, 197, 94, 1)',
+              borderWidth: 2
+            }
+          ]
+        },
+        options: {
+          scales: {
+            x: {
+              title: { display: true, text: 'Nivell d’inversió per càpita' }
+            },
+            y: {
+              title: { display: true, text: 'Taxa d’atur (%)' },
+              min: 0,
+              max: 10
+            }
+          },
+          plugins: {
+            legend: { display: true },
+            tooltip: {
+              callbacks: {
+                label: function(context) {
+                  return `${context.dataset.label}: ${context.raw}%`;
+                }
+              }
+            }
+          },
+          animation: { duration: 1000, easing: 'easeOutQuart' }
+        }
+      });
+    });
+  </script>
+</div>

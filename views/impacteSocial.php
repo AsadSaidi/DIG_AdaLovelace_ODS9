@@ -158,7 +158,6 @@
           Població a 1 de gener. Comarques i Aran
         </li>
       </ul>
-      <h3 class="text-3xl font-semibold mt-8 mb-2 text-orange-600">Gràfic de dispersió: Dependència Industrial vs. Taxa d'Atur</h3>
       <?php include '../includes/charts/dependenciaIndustrial.html' ?>
       <h4 class="text-xl font-semibold mb-2 text-orange-600">Conclusió d’aquest gràfic:</h4>
       <p class="mb-6 text-lg">
