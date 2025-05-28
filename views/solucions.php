@@ -32,6 +32,10 @@
     details summary:hover {
       color: #1E40AF;
     }
+    nav a:hover {
+      color: #F97316 !important; /* Taronja per a l'hover */
+      transform: scale(1.05);
+    }
   </style>
 </head>
 <body class="bg-gray-50 min-h-screen text-gray-900">
