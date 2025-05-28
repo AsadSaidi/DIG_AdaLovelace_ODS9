@@ -32,6 +32,14 @@
       <li><a href="../../views/solucions.php" class="text-black hover:text-blue-600 font-semibold">Solucions</a></li>
       <li><a href="../../views/API/documentacion.php" class="text-black hover:text-blue-600 font-semibold">API</a></li>
       <li><a href="../../views/qui_som.php" class="text-black hover:text-blue-600 font-semibold">Qui som?</a></li>
+      <li>
+      <select id="languageSelector" onchange="cambiarIdioma(this.value)" class="bg-orange-100 border border-orange-600 text-orange-600 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 p-2 hover:bg-orange-200 transition-colors">
+        <option value="es">ES</option>
+        <option value="en">EN</option>
+        <option value="ca" selected>CA</option>
+      </select>
+    </li>
+
     </ul>
   </nav>
 </header>

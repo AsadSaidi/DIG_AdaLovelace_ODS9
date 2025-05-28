@@ -222,5 +222,7 @@
     </section>
   </main>
   <?php include '../includes/footer.php' ?>
+  <script src="../scripts/traducir.js"></script>
+  <div id="google_translate_element" style="display:none"></div>
 </body>
 </html>
