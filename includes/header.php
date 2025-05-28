@@ -46,11 +46,12 @@
       <li class="flex items-center">
         <a href="../../views/API/documentacion.php" class="text-black hover:text-blue-600 font-semibold text-sm">API</a>
       </li>
-      <li class="flex items-center">
-        <select id="languageSelector" onchange="cambiarIdioma(this.value)" class="bg-orange-100 border border-orange-600 text-orange-600 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 p-1.5 hover:bg-orange-200 transition-colors">
-          <option value="es">ES</option>
-          <option value="en">EN</option>
-          <option value="ca" selected>CA</option>
+      <li class="flex items-center notranslate">
+        <select id="languageSelector" onchange="cambiarIdioma(this.value)">
+          <option value="ca">Català</option>
+          <option value="es">Español</option>
+          <option value="en">English</option>
+          <option value="ar">العربية</option> <!-- árabe añadido -->
         </select>
       </li>
     </ul>
