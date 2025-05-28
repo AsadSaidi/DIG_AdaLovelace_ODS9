@@ -29,6 +29,9 @@
         <a href="../../index.php" class="text-black hover:text-blue-600 font-semibold text-sm">Inici</a>
       </li>
       <li class="flex items-center">
+        <a href="../../views/qui_som.php" class="text-black hover:text-blue-600 font-semibold text-sm">Qui som?</a>
+      </li>
+      <li class="flex items-center">
         <a href="../../views/impacteSocial.php" class="text-black hover:text-blue-600 font-semibold text-sm">Impacte Social</a>
       </li>
       <li class="flex items-center">
@@ -42,9 +45,6 @@
       </li>
       <li class="flex items-center">
         <a href="../../views/API/documentacion.php" class="text-black hover:text-blue-600 font-semibold text-sm">API</a>
-      </li>
-      <li class="flex items-center">
-        <a href="../../views/qui_som.php" class="text-black hover:text-blue-600 font-semibold text-sm">Qui som?</a>
       </li>
       <li class="flex items-center">
         <select id="languageSelector" onchange="cambiarIdioma(this.value)" class="bg-orange-100 border border-orange-600 text-orange-600 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 p-1.5 hover:bg-orange-200 transition-colors">
