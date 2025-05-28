@@ -24,22 +24,35 @@
     </a>
   </div>
   <nav>
-    <ul class="flex space-x-6 list-none">
-      <li><a href="../../index.php" class="text-black hover:text-blue-600 font-semibold">Inici</a></li>
-      <li><a href="../../views/impacteSocial.php" class="text-black hover:text-blue-600 font-semibold">Impacte Social</a></li>
-      <li><a href="../../views/impacteAmbiental.php" class="text-black hover:text-blue-600 font-semibold">Impacte Ambiental</a></li>
-      <li><a href="../../views/impacteTecnologic.php" class="text-black hover:text-blue-600 font-semibold">Impacte Tecnològic</a></li>
-      <li><a href="../../views/solucions.php" class="text-black hover:text-blue-600 font-semibold">Solucions</a></li>
-      <li><a href="../../views/API/documentacion.php" class="text-black hover:text-blue-600 font-semibold">API</a></li>
-      <li><a href="../../views/qui_som.php" class="text-black hover:text-blue-600 font-semibold">Qui som?</a></li>
-      <li>
-      <select id="languageSelector" onchange="cambiarIdioma(this.value)" class="bg-orange-100 border border-orange-600 text-orange-600 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 p-2 hover:bg-orange-200 transition-colors">
-        <option value="es">ES</option>
-        <option value="en">EN</option>
-        <option value="ca" selected>CA</option>
-      </select>
-    </li>
-
+    <ul class="flex items-center space-x-6 list-none">
+      <li class="flex items-center">
+        <a href="../../index.php" class="text-black hover:text-blue-600 font-semibold text-sm">Inici</a>
+      </li>
+      <li class="flex items-center">
+        <a href="../../views/impacteSocial.php" class="text-black hover:text-blue-600 font-semibold text-sm">Impacte Social</a>
+      </li>
+      <li class="flex items-center">
+        <a href="../../views/impacteAmbiental.php" class="text-black hover:text-blue-600 font-semibold text-sm">Impacte Ambiental</a>
+      </li>
+      <li class="flex items-center">
+        <a href="../../views/impacteTecnologic.php" class="text-black hover:text-blue-600 font-semibold text-sm">Impacte Tecnològic</a>
+      </li>
+      <li class="flex items-center">
+        <a href="../../views/solucions.php" class="text-black hover:text-blue-600 font-semibold text-sm">Solucions</a>
+      </li>
+      <li class="flex items-center">
+        <a href="../../views/API/documentacion.php" class="text-black hover:text-blue-600 font-semibold text-sm">API</a>
+      </li>
+      <li class="flex items-center">
+        <a href="../../views/qui_som.php" class="text-black hover:text-blue-600 font-semibold text-sm">Qui som?</a>
+      </li>
+      <li class="flex items-center">
+        <select id="languageSelector" onchange="cambiarIdioma(this.value)" class="bg-orange-100 border border-orange-600 text-orange-600 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 p-1.5 hover:bg-orange-200 transition-colors">
+          <option value="es">ES</option>
+          <option value="en">EN</option>
+          <option value="ca" selected>CA</option>
+        </select>
+      </li>
     </ul>
   </nav>
 </header>
