@@ -49,7 +49,7 @@
             </div>
         </section>
 
-            <section class="bg-orange-100 p-8 rounded-lg shadow-md hover-scale:-translate-y-1 transition-transform animate-fade-in">
+        <section class="bg-[#FEFCE8] p-8 rounded-lg shadow-md space-y-4">
             <h2 class="text-2xl md:text-3xl font-semibold text-[#F97316]">Infraestructura resilient</h2>
             <p class="mt-3 text-justify text-[#1F2937]">La infraestructura resilient implica crear sistemes que puguin resistir i recuperar-se ràpidament de desastres naturals, crisi econòmiques o socials. Això inclou carreteres, ponts, transport, telecomunicacions i accés a serveis bàsics. Una bona infraestructura fa que les ciutats i pobles siguin més segurs i preparats per al futur.</p>
         </section>
@@ -141,45 +141,7 @@
     </main>
     
     <?php include 'includes/footer.php' ?>
-
-    <script>
-        const track = document.querySelector('.carousel-track');
-        const items = document.querySelectorAll('.carousel-item');
-        const prevBtn = document.getElementById('prev');
-        const nextBtn = document.getElementById('next');
-        const totalItems = items.length;
-        let currentIndex = 0;
-
-        function updateCarousel() {
-            const width = items[0].clientWidth;
-            track.style.transform = `translateX(-${currentIndex * width}px)`;
-        }
-
-        prevBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex === 0) ? totalItems - 1 : currentIndex - 1;
-            updateCarousel();
-        });
-
-        nextBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex === totalItems - 1) ? 0 : currentIndex + 1;
-            updateCarousel();
-        });
-
-        window.addEventListener('resize', updateCarousel);
-
-        function calculateEmissions() {
-            const energyInput = document.getElementById('energyInput').value;
-            const resultDiv = document.getElementById('result');
-            const emissionsSpan = document.getElementById('emissions');
-            if (energyInput && energyInput > 0) {
-                const emissions = (energyInput * 0.5).toFixed(2);
-                emissionsSpan.textContent = emissions;
-                resultDiv.classList.remove('hidden');
-            } else {
-                resultDiv.classList.add('hidden');
-            }
-        }
-    </script>
+    <script src="scripts/calculEmissio.js"><script>
     <script src="scripts/traducir.js"></script>
     <div id="google_translate_element" style="display:none"></div>
 </body>
