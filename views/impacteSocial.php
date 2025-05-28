@@ -198,6 +198,8 @@
       <a href="../index.php" class="inline-block bg-orange-600 text-white px-6 py-3 rounded-lg hover:bg-orange-700 transition-colors" aria-label="Torna a la pàgina principal">Torna a l'Inici</a>
     </section>
   </main>
+  <script src="scripts/traducir.js"></script>
+  <div id="google_translate_element" style="display:none"></div>
   <?php include '../includes/footer.php' ?>
 </body>
 </html>

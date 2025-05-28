@@ -75,6 +75,8 @@
       </div>
     </section>
   </main>
+  <script src="scripts/traducir.js"></script>
+  <div id="google_translate_element" style="display:none"></div>
   <?php include '../includes/footer.php' ?>
 </body>
 </html>
