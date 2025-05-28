@@ -29,6 +29,7 @@
       <li><a href="../../views/impacteSocial.php" class="text-black hover:text-blue-600 font-semibold">Impacte Social</a></li>
       <li><a href="../../views/impacteAmbiental.php" class="text-black hover:text-blue-600 font-semibold">Impacte Ambiental</a></li>
       <li><a href="../../views/impacteTecnologic.php" class="text-black hover:text-blue-600 font-semibold">Impacte Tecnològic</a></li>
+      <li><a href="../../views/solucions.php" class="text-black hover:text-blue-600 font-semibold">Solucions</a></li>
       <li><a href="../../views/API/documentacion.php" class="text-black hover:text-blue-600 font-semibold">API</a></li>
       <li><a href="../../views/qui_som.php" class="text-black hover:text-blue-600 font-semibold">Qui som?</a></li>
     </ul>
