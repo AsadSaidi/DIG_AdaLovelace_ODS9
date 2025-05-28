@@ -120,7 +120,5 @@
         document.getElementById("salida").textContent = "Error al carregar les dades: " + error;
       });
   </script>
-  <script src="scripts/traducir.js"></script>
-  <div id="google_translate_element" style="display:none"></div>
 </body>
 </html>
