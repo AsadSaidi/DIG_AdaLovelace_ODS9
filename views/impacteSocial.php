@@ -7,43 +7,11 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      background-color: #f4f4f4;
-    }
-    .animate-fade-in {
-      animation: fadeIn 1s ease-in-out;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .chart-wrapper canvas {
-      max-width: 100%;
-      width: 100%;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-    }
-    details summary {
-      cursor: pointer;
-      transition: color 0.2s ease-in-out;
-    }
-    details summary:hover {
-      color: #1E40AF;
-    }
-     /* Sobreescrita de l'estil :hover del menú de navegació */
-    nav a:hover {
-      color: #F97316 !important; /* Taronja per a l'hover */
-      transform: scale(1.05);
-    }
-  </style>
+  <link rel="stylesheet" href="../estils/impacteSocial.css">
 </head>
 <body class="bg-gray ?-50 min-h-screen text-gray-900">
   <?php include '../includes/header.php' ?>
-  <header class="bg-gradient-to-r from-orange-600 to-orange-400 text-white p-6">
+  <header class="bg-gradient-to-r from-[#F97316] to-[#FBBF24] text-white p-6">
     <h1 class="text-6xl font-bold max-w-5xl mx-auto animate-fade-in">L'Impacte Social de la Indústria</h1>
   </header>
   <main class="max-w-5xl mx-auto p-6 space-y-16">

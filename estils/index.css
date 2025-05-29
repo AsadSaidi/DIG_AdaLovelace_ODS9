@@ -1,0 +1,27 @@
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    background-color: #f4f4f4; /* Canviat de #F0F4F0 a #f4f4f4 per coherència */
+}
+.animate-fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.carousel-track {
+    transition: transform 0.5s ease-in-out;
+}
+.carousel-item {
+    scroll-snap-align: start;
+    transition: transform 0.3s ease-in-out;
+}
+.carousel-item:hover {
+    transform: scale(1.02);
+}
+/* Afegit per coherència amb impacteSocial.php */
+nav a:hover {
+    color: #F97316 !important; /* Taronja per a l'hover */
+    transform: scale(1.05);
+}

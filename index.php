@@ -6,40 +6,17 @@
     <title>ODS 9 – Indústria, Innovació i Infraestructura</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            background-color: #F0F4F0; /* Gris clar verdós per sostenibilitat */
-        }
-        .animate-fade-in {
-            animation: fadeIn 1s ease-in-out;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .carousel-track {
-            transition: transform 0.5s ease-in-out;
-        }
-        .carousel-item {
-            scroll-snap-align: start;
-            transition: transform 0.3s ease-in-out;
-        }
-        .carousel-item:hover {
-            transform: scale(1.02);
-        }
-    </style>
+    <link rel="stylesheet" href="estils/index.css">
 </head>
-<body class="min-h-screen text-gray-900">
+<body class="bg-gray-50 min-h-screen text-gray-900"> <!-- Canviat a bg-gray-50 min-h-screen text-gray-900 -->
     <?php include 'includes/header.php' ?>
     
-    <header class="bg-gradient-to-r from-orange-600 to-orange-400 text-white p-6">
+    <header class="bg-gradient-to-r from-[#F97316] to-[#FBBF24] text-white p-6">
         <h1 class="text-4xl md:text-5xl font-bold max-w-5xl mx-auto animate-fade-in text-white">Objectiu de Desenvolupament Sostenible 9</h1>
     </header>
     
     <main class="max-w-5xl mx-auto p-6 space-y-6">
-            <section class="bg-orange-100 p-8 rounded-lg shadow-md hover-scale:-translate-y-1 transition-transform animate-fade-in">
+        <section class="p-8 rounded-lg shadow-md hover-scale:-translate-y-1 transition-transform animate-fade-in">
             <div class="w-full mb-4">
                 <?php include 'includes/animacion.html' ?>
             </div>
@@ -49,22 +26,22 @@
             </div>
         </section>
 
-            <section class="bg-orange-100 p-8 rounded-lg shadow-md hover-scale:-translate-y-1 transition-transform animate-fade-in">
+        <section class="p-8 rounded-lg shadow-md hover-scale:-translate-y-1 transition-transform animate-fade-in">
             <h2 class="text-2xl md:text-3xl font-semibold text-[#F97316]">Infraestructura resilient</h2>
             <p class="mt-3 text-justify text-[#1F2937]">La infraestructura resilient implica crear sistemes que puguin resistir i recuperar-se ràpidament de desastres naturals, crisi econòmiques o socials. Això inclou carreteres, ponts, transport, telecomunicacions i accés a serveis bàsics. Una bona infraestructura fa que les ciutats i pobles siguin més segurs i preparats per al futur.</p>
         </section>
 
-            <section class="bg-orange-100 p-8 rounded-lg shadow-md hover-scale:-translate-y-1 transition-transform animate-fade-in">
+        <section class="p-8 rounded-lg shadow-md hover-scale:-translate-y-1 transition-transform animate-fade-in">
             <h2 class="text-2xl md:text-3xl font-semibold text-[#F97316]">Industrialització sostenible i inclusiva</h2>
             <p class="mt-3 text-justify text-[#1F2937]">Promoure indústries sostenibles significa fomentar processos productius que minimitzin l’impacte ambiental i utilitzin recursos de manera eficient. La inclusió assegura que petites i mitjanes empreses, així com comunitats vulnerables, tinguin accés a tecnologies i mercats, generant ocupació i desenvolupament econòmic just.</p>
         </section>
 
-        <section class="bg-orange-100 p-8 rounded-lg shadow-md hover-scale:-translate-y-1 transition-transform animate-fade-in">
+        <section class="p-8 rounded-lg shadow-md hover-scale:-translate-y-1 transition-transform animate-fade-in">
             <h2 class="text-2xl md:text-3xl font-semibold text-[#F97316]">Innovació per al desenvolupament</h2>
             <p class="mt-3 text-justify text-[#1F2937]">La innovació és el motor del progrés. L’ODS 9 impulsa la inversió en recerca i desenvolupament tecnològic, facilitant l’accés a tecnologies avançades per a tots els països, especialment els en vies de desenvolupament, per tancar la bretxa digital i tecnològica.</p>
         </section>
 
-            <section class="bg-orange-100 p-8 rounded-lg shadow-md hover-scale:-translate-y-1 transition-transform animate-fade-in">
+        <section class="p-8 rounded-lg shadow-md hover-scale:-translate-y-1 transition-transform animate-fade-in">
             <h2 class="text-2xl md:text-3xl font-semibold mb-3 text-[#F97316] text-center">Sostenibilitat i ODS 9</h2>
             <p class="text-center max-w-3xl mx-auto text-[#1F2937] mb-4">L’ODS 9 promou un futur on la indústria és verda, les infraestructures connecten i ajuden a tothom, i la innovació fa la vida més fàcil i sostenible.</p>
 
@@ -118,7 +95,7 @@
             </div>
         </section>
 
-           <section class="bg-orange-100 p-8 rounded-lg shadow-md hover-scale:-translate-y-1 transition-transform animate-fade-in">
+        <section class="p-8 rounded-lg shadow-md hover-scale:-translate-y-1 transition-transform animate-fade-in">
             <h2 class="text-2xl md:text-3xl font-semibold text-[#F97316]">Calcula el teu impacte sostenible</h2>
             <p class="mt-3 text-justify text-[#1F2937]">Introdueix el consum energètic industrial (en ktep) per estimar les emissions de CO₂ equivalents:</p>
             <div class="mt-4 flex flex-col sm:flex-row sm:items-center gap-3">
@@ -128,7 +105,7 @@
             <p id="result" class="mt-3 hidden text-[#F97316]">Emissions estimades: <span id="emissions"></span> tones de CO₂</p>
         </section>
 
-          <section class="bg-orange-100 p-8 rounded-lg shadow-md hover-scale:-translate-y-1 transition-transform animate-fade-in">
+        <section class="p-8 rounded-lg shadow-md hover-scale:-translate-y-1 transition-transform animate-fade-in">
             <h2 class="text-2xl md:text-3xl font-semibold text-[#F97316]">Recursos per a la sostenibilitat</h2>
             <p class="mt-3 text-justify text-[#1F2937]">Explora recursos per promoure pràctiques sostenibles en la indústria:</p>
             <ul class="mt-3 list-disc pl-6 space-y-1">

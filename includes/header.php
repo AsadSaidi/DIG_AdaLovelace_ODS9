@@ -4,18 +4,7 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-    }
-    nav a {
-      transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
-    }
-    nav a:hover {
-      color: #1E40AF;
-      transform: scale(1.05);
-    }
-  </style>
+  <link rel="stylesheet" href="/../../estils/header.css">
 </head>
 <header class="sticky top-0 z-50 flex items-center justify-between p-4 bg-white text-black shadow-md">
   <div class="logo">

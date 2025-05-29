@@ -6,39 +6,12 @@
   <title>Documentació API - Dades Comarques</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      background-color: #f4f4f4;
-    }
-    .animate-fade-in {
-      animation: fadeIn 1s ease-in-out;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    nav a:hover {
-      color: #F97316 !important;
-      transform: scale(1.05);
-    }
-    pre {
-      white-space: pre-wrap;
-      word-wrap: break-word;
-    }
-    .hover-scale {
-      transition: transform 0.3s;
-    }
-    .hover-scale:hover {
-      transform: scale(1.02);
-    }
-  </style>
+  <link rel="stylesheet" href="../../estils/documentacio_api.css">
 </head>
 <body class="bg-gray-50 min-h-screen text-gray-900">
   <?php include '../../includes/header.php' ?>
   
-  <header class="bg-gradient-to-r from-orange-600 to-orange-400 text-white p-4">
+  <header class="bg-gradient-to-r from-[#F97316] to-[#FBBF24] text-white p-4">
     <h1 class="text-3xl md:text-4xl font-bold max-w-5xl mx-auto animate-fade-in text-white">Documentació de l'API de la Base de Dades</h1>
   </header>
 
@@ -47,11 +20,11 @@
     <section class="bg-white p-6 rounded-lg shadow-md animate-fade-in">
       <label for="endpointSelect" class="block text-lg font-semibold text-orange-600 mb-2">Selecciona una taula:</label>
       <select id="endpointSelect" class="w-full p-2 border border-gray-300 rounded-lg focus:ring-orange-500 focus:border-orange-500">
-        <option value="poblacio_comarques">poblacio_comarques</option>
-        <option value="poblacio_sectors">poblacio_sectors</option>
-        <option value="atur_comarca">atur_comarca</option>
-        <option value="vab_comarques">vab_comarques</option>
-        <option value="inversions_comarques">inversions_comarques</option>
+        <option value="poblacio_comarques">Població a 1 de gener per comarques i Aran</option>
+        <option value="poblacio_sectors">Població ocupada per branques d'activitat i per comarques</option>
+        <option value="atur_comarca">Atur registrat per comarques</option>
+        <option value="vab_comarques">Valor afegit brut de la indústria, per branques d'activitat i per comarques</option>
+        <option value="inversions_comarques">Inversions per comarques</option>
       </select>
       <input type="text" id="apiUrl" class="mt-3 w-full p-2 border border-gray-300 rounded-lg bg-gray-100 text-gray-700" readonly />
     </section>
@@ -88,7 +61,7 @@
     <section class="bg-white p-6 rounded-lg shadow-md animate-fade-in">
       <h3 class="text-xl font-semibold text-orange-600 mb-2">Format de la resposta:</h3>
       <h4 id="urlEjemplo" class="text-lg font-semibold text-gray-700 mb-1">URL utilitzada:</h4>
-      <pre id="apiEjemplo" class="bg-orange-100 text-black p-3 rounded-lg overflow-x-auto overflow-y-auto max-h-96 text-sm"></pre>    
+      <pre id="apiEjemplo" class="bg-gray-50 text-black p-3 rounded-lg overflow-x-auto overflow-y-auto max-h-96 text-sm"></pre>    
     </section>
 
     <!-- Notes -->
@@ -103,6 +76,8 @@
   </main>
 
   <?php include '../../includes/footer.php' ?>
+  <script src="../../scripts/traducir.js"></script>
+  <div id="google_translate_element" style="display:none"></div>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {

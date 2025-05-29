@@ -1,0 +1,10 @@
+body {
+    font-family: 'Inter', sans-serif;
+}
+nav a {
+    transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+nav a:hover {
+    color: #1E40AF;
+    transform: scale(1.05);
+}

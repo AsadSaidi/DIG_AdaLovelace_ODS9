@@ -1,0 +1,30 @@
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    background-color: #FFFFFF; /* Fons blanc pur */
+}
+.animate-fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.chart-wrapper canvas {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+details summary {
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+details summary:hover {
+    color: #FB923C; /* Taronja suau per a hover */
+}
+nav a:hover {
+    color: #F97316 !important; /* Taronja vibrant per a hover */
+    transform: scale(1.05);
+}
