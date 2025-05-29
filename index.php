@@ -26,11 +26,7 @@
             </div>
         </section>
 
-<<<<<<< HEAD
         <section class="p-8 rounded-lg shadow-md hover-scale:-translate-y-1 transition-transform animate-fade-in">
-=======
-        <section class="bg-[#FEFCE8] p-8 rounded-lg shadow-md space-y-4">
->>>>>>> 103b399864eadaadf040194c207fbb9c2bfe9695
             <h2 class="text-2xl md:text-3xl font-semibold text-[#F97316]">Infraestructura resilient</h2>
             <p class="mt-3 text-justify text-[#1F2937]">La infraestructura resilient implica crear sistemes que puguin resistir i recuperar-se ràpidament de desastres naturals, crisi econòmiques o socials. Això inclou carreteres, ponts, transport, telecomunicacions i accés a serveis bàsics. Una bona infraestructura fa que les ciutats i pobles siguin més segurs i preparats per al futur.</p>
         </section>
