@@ -11,7 +11,7 @@
 <body class="min-h-screen text-[#1F2937]">
   <?php include '../includes/header.php' ?>
 
-  <header class="bg-gradient-to-r from-[#F97316] to-[#FBBF24] text-white p-6">
+    <header class="bg-gradient-to-r from-orange-600 to-orange-400 text-white p-6">
     <h1 class="text-6xl font-bold max-w-5xl mx-auto animate-fade-in text-white">Qui som?</h1>
   </header>
 

@@ -45,7 +45,11 @@
       </div>
     </section>
   </main>
+<<<<<<< HEAD
   <script src="../scripts/traducir.js"></script>
+=======
+  <script src="scripts/traducir.js"></script>
+>>>>>>> 103b399864eadaadf040194c207fbb9c2bfe9695
   <div id="google_translate_element" style="display:none"></div>
   <?php include '../includes/footer.php' ?>
 </body>
